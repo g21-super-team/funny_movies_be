@@ -18,7 +18,7 @@ async function bootstrap() {
     credentials: true,
     origin: [
       'https://localhost:3002',
-      'https://funny-movies-fe-production.up.railway.app',
+      'https://funny-movies-fe-production-1.up.railway.app',
     ],
   });
   const document = SwaggerModule.createDocument(app, config);
