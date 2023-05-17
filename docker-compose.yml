@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: funny-movie-mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+      - MONGO_INITDB_DATABASE=funny-movie-db
+    volumes:
+      - mongodata:/data/db
+  redis:
+    image: redis:6.2.6
+    container_name: funny-movie-redis
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - redisdata:/data
+volumes:
+  mongodata:
+  redisdata:
